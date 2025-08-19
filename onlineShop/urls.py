@@ -24,7 +24,7 @@ from github import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.github_webhook ,name='github'),
+    path('github/webhook/',views.github_webhook ,name='github'),
     path('', include('blog.urls', namespace='blog')),
     re_path(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
