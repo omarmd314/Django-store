@@ -20,11 +20,11 @@ from django.conf.urls.static import static
 
 from django.urls import path, include, re_path
 
-import github
+from github import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('github.urls')),
+    path('',views.github_webhook ,namespace='github'),
     path('', include('blog.urls', namespace='blog')),
     re_path(r'^ratings/', include('star_ratings.urls', namespace='ratings')),
 ]
